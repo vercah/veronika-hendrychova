@@ -280,7 +280,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     padding: 5%;
 }
 
-p > a, span > a {
+p > a, span > a, li > a {
 	color: #4CAF50;
 }
 
