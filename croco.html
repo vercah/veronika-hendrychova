@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Croconika</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-green.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/445a6e766d.js" crossorigin="anonymous"></script>
+<style>
+  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+  #terminal {
+    font-family: 'Courier New', Courier, monospace; /* Use a monospace font with a wider aspect ratio */
+    width: 100%;
+    overflow-x: auto;
+    height: 450px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    white-space: nowrap; /* Prevent line breaks */
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: #265728;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme-d4 w3-collapse w3-top w3-left-align w3-large">
+    <a href="index.html#about" class="w3-bar-item w3-button w3-theme-d1">Veronika Hendrychová</a>
+    <a href="index.html#contact" class="w3-bar-item w3-button w3-hover-white" id="mySidebar">Contact</a>
+  </div>
+</div>
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main">
+
+  <div class="w3-row w3-padding-64 light" id="about">
+    <div class="w3-container">
+
+      <div class="button-container">
+        <a href="" class="button">Back</a>
+        <a href="" class="button">Forth</a>
+      </div>
+
+      <div id="terminal"></div>
+  
+  <script>
+    const terminal = document.getElementById('terminal');
+    const delay = 30
+
+    const images = {
+      text: `For young Croco, the world seemed vast and mysterious.
+As he grew older, he learned a way to treat the unknown - to approach it,
+sniff it, and try to understand.
+Because sometimes the unknown then laughs and understands back!\n
+Croco is on his way now,
+                         :+=.             .--=-:.                     exploring the vast world.
+         ..:..       .-=+=:-++-.        -+=:..:-++.          :::      But what is happening?
+     .=++=--=***+++++=-.     .:=+++++- =+.  .*+*:-*-::::::::*+:*=     Something unknown appearing?
+   :++:     :::..                      :.   .=++. ++::::--+-:..*-     Wait no
+  -*:               :+.   .     .      .+:     .  :.  .   .:-=+*.     It's him!
+ :*=     .-======:  .*+=+**+==++*+==-   +*===++*=====+*++=--:.        He came to look at you
+ =*=    =+:     -*. .++            .*- .=*.                           because he knows that
+ =*    .*:       :++*+*=            .=+*+*+                           the next unknown friend
+ .*-    ++.                                                           might be
+  :*=.   :=+++==---::..                                               just a sniff away.
+   .=**=.     ...::---===++=-.
+      :=++++++++++++++++++++**
+             `
+    };
+
+
+    const print = async (message, delay = 50) => {
+      const lines = message.split('\n');
+      
+      for (let i = 0; i < lines.length; i++) {
+        const formattedLine = lines[i].replace(/ /g, '\u00A0');
+        let index = 0;
+        
+        await new Promise(resolve => {
+          const intervalId = setInterval(() => {
+            if (index < formattedLine.length) {
+              terminal.innerHTML += formattedLine[index];
+              terminal.scrollTop = terminal.scrollHeight;
+              index++;
+            } else {
+              clearInterval(intervalId);
+              resolve(); // Resolve the promise to indicate completion of this line
+            }
+          }, delay);
+        });
+        terminal.innerHTML += "<br>";
+      }
+      terminal.scrollTop = terminal.scrollHeight;
+    };
+
+
+    const clear = () => {
+      terminal.innerHTML = '';
+    };
+
+    const displayImages = () => {
+      clear();
+      print(images.text, delay);
+    };
+
+    displayImages();
+  </script>
+  </div>
+</div>
+  
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2">
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+</body>
+</html>
