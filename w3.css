@@ -353,10 +353,4 @@ input[type="submit"]:hover {
   background-color: #357a38;
 }
 
-.banner {
-  background-color: #4CAF50; /* Green background color */
-  color: white; /* White text color */
-  padding: 10px; /* Padding around the text */
-  text-align: center; /* Center the text horizontally */
-  font-weight: bold; /* Make the text bold */
-}
+

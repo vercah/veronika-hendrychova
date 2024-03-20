@@ -12,11 +12,16 @@
 <script src="https://kit.fontawesome.com/445a6e766d.js" crossorigin="anonymous"></script>
 <style>
   html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+  .w3-bar-item img {
+  width: 50px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 10px;
+  }
   #terminal {
     font-family: 'Courier New', Courier, monospace; /* Use a monospace font with a wider aspect ratio */
     width: 100%;
     overflow-x: auto;
-    height: 480px;
+    height: 420px;
     background-color: black;
     color: white;
     padding: 10px;
@@ -47,7 +52,7 @@
   .banner {
   background-color: #4caf50; /* Green background color */
   color: white; /* White text color */
-  padding: 3px; /* Padding around the text */
+  padding: 3px 15px; /* Padding around the text */
   text-align: center; /* Center the text horizontally */
   line-height: 1; /* Adjust line height to make it less tall */
   font-weight: normal;
@@ -59,8 +64,8 @@
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-theme-d4 w3-collapse w3-top w3-left-align w3-large">
-    <a href="index.html#about" class="w3-bar-item w3-button w3-theme-d1">Veronika Hendrychová</a>
-    <a href="index.html#contact" class="w3-bar-item w3-button w3-hover-white" id="mySidebar">Contact</a>
+    <a href="index.html#about" class="w3-bar-item w3-button w3-theme-d1">Croconika Hendrychová <img src="transparent-croco.png" alt="Croconika"></a>
+    <!-- <a href="index.html#contact" class="w3-bar-item w3-button w3-hover-white" id="mySidebar">Contact</a> -->
   </div>
 </div>
 
@@ -73,7 +78,7 @@
       <div class="banner-container">
         <div class="banner">
           <p><strong>Welcome to the Crocoloop!</strong></p>
-          <p>This Croco comes from a different meridian, nevertheless he found his place in the crocompany. You can move forward and backward with the buttons on the bottom of the page.</p>
+          <p>This one comes from a different meridian, nevertheless she found her place in the crocompany. You can visit her colleagues using the buttons on the bottom of the page.</p>
         </div>
       </div>
       <div id="terminal"></div>
@@ -87,27 +92,25 @@
     const delay = 40
 
     const images = {
-      text: `For young Croco, the world seemed vast and mysterious.
-But as he grew older, he learned his way to treat the unknown.
-He likes to approach it carefully, sniff it,
-taste (if needed), and try to understand.
-Sometimes the unknown tastes like garbage, 
-but sometimes it understands back!\n
-Croco is on his way now,                               :+=.             .--=-:.
-exploring the vast world.              ..:..       .-=+=:-++-.        -+=:..:-++.          :::
-But what is that?                  .=++=--=***+++++=-.     .:=+++++- =+.  .*+*:-*-::::::::*+:*=
-Something unknown appearing?     :++:     :::..                      :.   .=++. ++::::--+-:..*-
-Wait no                         -*:               :+.   .     .      .+:     .  :.  .   .:-=+*.
-It's him!                      :*=     .-======:  .*+=+**+==++*+==-   +*===++*=====+*++=--:.
-He came to look at you         =*=    =+:     -*. .++            .*- .=*.
-for he knows that              =*    .*:       :++*+*=            .=+*+*+
-the next unknown friend        .*-    ++.
-might be                        :*=.   :=+++==---::..
-just a sniff away.               .=**=.     ...::---===++=-.
-                                   :=++++++++++++++++++++**
-             `
+      text: `For young Croconika, the world seemed vast and mysterious.
+But as she grew older, she learned her way to treat the unknown.
+She likes to approach it carefully, sniff it,
+taste (if needed), and try to understand. Sometimes
+the unknown tastes like baguette (or garbage), 
+but sometimes it understands back!
+                                                       :+=.             .--=-:.
+Croconika is on her way now,           ..:..       .-=+=:-++-.        -+=:..:-++.          :::
+exploring the vast world.          .=++=--=***+++++=-.     .:=+++++- =+.  .*+*:-*-::::::::*+:*=
+But what is this?                :++:     :::..                      :.   .=++. ++::::--+-:..*-
+Are you becoming zinzin?        -*:               :+.   .     .      .+:     .  :.  .   .:-=+*.
+Wait no                        :*=     .-======:  .*+=+**+==++*+==-   +*===++*=====+*++=--:.
+It's her!                      =*=    =+:     -*. .++            .*- .=*.
+She came to look at you        =*    .*:       :++*+*=            .=+*+*+
+for she knows that             .*-    ++.
+the next unknown friend         :*=.   :=+++==---::..
+might be                         .=**=.     ...::---===++=-.
+just a sniff away.                 :=++++++++++++++++++++**`
     };
-
 
     const print = async (message, delay = 50) => {
       const lines = message.split('\n');
