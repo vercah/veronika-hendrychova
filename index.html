@@ -14,6 +14,275 @@
 <script src="https://kit.fontawesome.com/445a6e766d.js" crossorigin="anonymous"></script>
 <style>
  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+ .project-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 20px;
+   margin-bottom: 16px;
+ }
+
+ .project-card {
+   background-color: #fff;
+   border: 1px solid #dbefdc;
+   border-top: 4px solid #4caf50;
+   border-radius: 6px;
+   padding: 20px 22px;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+   display: flex;
+   flex-direction: column;
+ }
+
+ .project-card:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 6px 18px rgba(76, 175, 80, 0.18);
+   border-top-color: #357a38;
+ }
+
+ .project-card h3 {
+   color: #357a38;
+   margin: 0 0 6px 0;
+   font-size: 1.15em;
+   line-height: 1.3;
+ }
+
+ .project-card .collaborator {
+   font-size: 0.92em;
+   color: #555;
+   margin-bottom: 14px;
+ }
+
+ .project-card .collaborator a {
+   color: #2e6830;
+   text-decoration: underline;
+ }
+
+ .project-card .collaborator a:hover {
+   color: #4caf50;
+ }
+
+ .project-card .project-links {
+   list-style: none;
+   padding: 0;
+   margin: 0 0 14px 0;
+ }
+
+ .project-card .project-links li {
+   padding: 4px 0;
+   font-size: 0.95em;
+ }
+
+ .project-card .project-links a {
+   color: #2e6830;
+   text-decoration: underline;
+   font-weight: 500;
+ }
+
+ .project-card .project-links a:hover {
+   color: #4caf50;
+ }
+
+ .project-card .project-links i {
+   color: #4caf50;
+   margin-right: 8px;
+   width: 14px;
+ }
+
+ .project-card .tags {
+   margin-top: auto;
+   padding-top: 8px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 6px;
+ }
+
+ .project-card .tag {
+   background-color: #f4faf4;
+   color: #2e6830;
+   border: 1px solid #b7dfb8;
+   border-radius: 12px;
+   padding: 3px 10px;
+   font-size: 0.78em;
+   white-space: nowrap;
+ }
+
+ .other-projects {
+   margin-top: 8px;
+   font-size: 0.95em;
+   color: #555;
+ }
+
+ .other-projects a {
+   color: #2e6830;
+   font-weight: 500;
+ }
+
+ #about {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: stretch;
+ }
+
+ #about > .w3-twothird {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .about-tags {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 6px;
+   margin-top: 6px;
+   margin-bottom: 16px;
+ }
+
+ .about-tags .tag {
+   background-color: #f4faf4;
+   color: #2e6830;
+   border: 1px solid #b7dfb8;
+   border-radius: 12px;
+   padding: 3px 10px;
+   font-size: 0.85em;
+   white-space: nowrap;
+ }
+
+ .cv-pill {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   background-color: #f4faf4;
+   color: #2e6830;
+   border: 1px solid #b7dfb8;
+   border-radius: 12px;
+   padding: 6px 14px;
+   font-size: 0.9em;
+   text-decoration: none;
+   margin-top: auto;
+   align-self: flex-start;
+   transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+ }
+
+ .cv-pill:hover {
+   background-color: #dbefdc;
+   border-color: #4caf50;
+   color: #2e6830;
+   text-decoration: none;
+   transform: translateY(-1px);
+ }
+
+ .experience-list {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+ }
+
+ .exp-card {
+   background-color: #fff;
+   border: 1px solid #dbefdc;
+   border-top: 4px solid #4caf50;
+   border-radius: 6px;
+   padding: 20px 24px;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+ }
+
+ .exp-card:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 6px 18px rgba(76, 175, 80, 0.18);
+   border-top-color: #357a38;
+ }
+
+ .exp-header {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: baseline;
+   gap: 8px;
+   margin-bottom: 10px;
+ }
+
+ .exp-header h3 {
+   color: #357a38;
+   margin: 0;
+   font-size: 1.15em;
+   line-height: 1.3;
+ }
+
+ .exp-header h3 a {
+   color: #357a38;
+   text-decoration: underline;
+ }
+
+ .exp-header h3 a:hover {
+   color: #4caf50;
+ }
+
+ .sub-project h4 a {
+   color: #2e6830;
+   text-decoration: underline;
+ }
+
+ .sub-project h4 a:hover {
+   color: #4caf50;
+ }
+
+ .exp-meta {
+   font-size: 0.88em;
+   color: #555;
+ }
+
+ .exp-card p {
+   margin: 6px 0;
+   line-height: 1.5;
+ }
+
+ .exp-card .tags {
+   margin-top: 12px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 6px;
+ }
+
+ .exp-card .tag {
+   background-color: #f4faf4;
+   color: #2e6830;
+   border: 1px solid #b7dfb8;
+   border-radius: 12px;
+   padding: 3px 10px;
+   font-size: 0.78em;
+   white-space: nowrap;
+ }
+
+ .sub-projects {
+   margin-top: 14px;
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+ }
+
+ .sub-project {
+   border-left: 3px solid #b7dfb8;
+   padding: 4px 0 4px 14px;
+   transition: border-color 0.15s ease;
+ }
+
+ .sub-project:hover {
+   border-left-color: #4caf50;
+ }
+
+ .sub-project h4 {
+   color: #2e6830;
+   margin: 0 0 4px 0;
+   font-size: 1em;
+ }
+
+ .sub-project p {
+   margin: 0;
+   font-size: 0.95em;
+   line-height: 1.5;
+   color: #333;
+ }
 </style>
 </head>
 <body>
@@ -22,6 +291,10 @@
 <div class="w3-top">
   <div class="w3-bar w3-theme-d4 w3-collapse w3-top w3-left-align w3-large">
     <a href="" class="w3-bar-item w3-button w3-theme-d1 w3-hover-white">Veronika Hendrychová</a>
+    <a href="#research" class="w3-bar-item w3-button w3-theme-d2 w3-hover-white">Research</a>
+    <a href="#experience" class="w3-bar-item w3-button w3-theme-d2 w3-hover-white">Experience</a>
+    <a href="#other" class="w3-bar-item w3-button w3-theme-d2 w3-hover-white">Other</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-theme-d2 w3-hover-white">Contact</a>
     <!-- <a href="teaching/" class="w3-bar-item w3-button w3-theme-d2 w3-hover-white">Teaching</a> -->
   </div>
 </div>
@@ -34,49 +307,224 @@
     <div class="w3-third w3-container">
       <div class="avatar-container">
         <img class="w3-center avatar" src="profile-photo.jpg" alt="Veronika Hendrychová">
-        <div class="icons">
-          <a href="https://github.com/vercah"><i class="fa-brands fa-square-github"></i></a>
-          <a href="https://km.fjfi.cvut.cz/studenti/1898_hendrychova-veronika"><i class="fa-sharp fa-solid fa-graduation-cap"></i></a>
-          <a href="https://fykos.org/about-us/organizing-committee#11368"><i class="fa-solid fa-briefcase"></i></a>
-        </div>
-      <div><a href="cv.pdf" style="text-decoration: none;"><i class="fa-solid fa-download"></i> My CV</a></div>
       </div>
       <!-- <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
     </div>
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-green">About me</h1>
-      <p>I recently graduated with an engineering degree in Mathematical Computer Science from the Czech Technical University in Prague, <a href="https://www.fjfi.cvut.cz/en/education/master-s-study/fields-of-master-continuation-programme-new/mathematical-informatics">Faculty of Nuclear Sciences and Physical Engineering</a>. I am interested in opportunities at the intersection of mathematics, computer science, operations, and life sciences — whether in research, industry, or beyond.</p>
+      <p>I recently graduated with an engineering degree in mathematics at the <a href="https://www.fjfi.cvut.cz/en" target="_blank">Czech Technical University</a>. I am interested in opportunities at the intersection of mathematics, AI safety, operations and beyond.</p>
 
-      <p>Sometimes I take part in organizing Czech and international competitions and events as operations staff and IT support within the <a href="https://fykos.org">FYKOS</a> student group, now mainly as a senior consultant. I also enjoy contributing to other educational events for students and children like <a href="https://pair.camp/">the PAIR Camp</a> or Science summer camps organized by the <a href="https://www.natur.cuni.cz/eng">Faculty of Science, Charles University</a>, usually as operations staff or lecturer. I led three semesters of linear algebra practice sessions as a teaching assistant at FNSPE CTU. I find joy in learning foreign languages, playing Go, attempting calisthenics, and playing the piano.</p>
-
+      <p>I find joy in many things, including but not limited to</p>
+      <div class="about-tags">
+        <span class="tag">learning languages</span>
+        <span class="tag">playing Go</span>
+        <span class="tag">attempting calisthenics</span>
+        <span class="tag">playing the piano</span>
+        <span class="tag">sporty adrenaline activities</span>
+        <span class="tag">vibecoding</span>
+      </div>
+      <a href="cv.pdf" class="cv-pill"><i class="fa-solid fa-download"></i> My CV</a>
     </div>
   </div>
 
-  <div class="w3-row dark w3-padding-16">
+  <div class="w3-row dark w3-padding-16" id="research">
     <div class="w3-third w3-container">
       <h1 class="w3-text-green">Research projects</h1>
     </div>
     <div class="w3-twothird w3-container w3-padding-16">
-      <ul>
-        <li><strong>Mathematical model of phylogenetic compression</strong> - project with <a href="https://brinda.eu/" target="_blank">Karel Břinda</a>
-          <ul>
-            <li>preprint: <a href="https://www.biorxiv.org/content/10.64898/2026.03.18.712055v1" target="_blank">Why phylogenies compress so well: combinatorial guarantees under the Infinite Sites Model</a></li>
-            <li>diploma thesis: <a href="diploma-thesis.pdf" target="_blank">Mathematical model of phylogenetic compression</a></li>
-            <li>genomics, phylogenetic trees, mathematical modeling, complexity theory</li>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <h3>Mathematical model of phylogenetic compression</h3>
+          <div class="collaborator">with <a href="https://brinda.eu/" target="_blank">Karel Břinda</a></div>
+          <ul class="project-links">
+            <li><i class="fa-solid fa-file-lines"></i><a href="https://www.biorxiv.org/content/10.64898/2026.03.18.712055v1" target="_blank">Preprint: Why phylogenies compress so well</a></li>
+            <li><i class="fa-solid fa-graduation-cap"></i><a href="diploma-thesis.pdf" target="_blank">Diploma thesis</a></li>
           </ul>
-        <li><strong>String attractors of Rote sequences</strong> - project with <a href="https://kmlinux.fjfi.cvut.cz/~balkolub/" target="_blank">Ľubomíra Dvořáková</a>
-          <ul>
-            <li>paper: <a href="https://dmtcs.episciences.org/paper/view/id/14268" target="_blank">String attractors of Rote sequences</a> in DMTCS</li>
-            <li>bachelor thesis: <a href="bachelor-thesis.pdf" target="_blank">String attractors</a></li>
-            <li>string attractors, combinatorics on words, Sturmian, pseudostandard, and Rote infinite words</li>
+          <div class="tags">
+            <span class="tag">phylogenetic trees</span>
+            <span class="tag">mathematical modeling</span>
+            <span class="tag">complexity theory</span>
+            <span class="tag">snakemake</span>
+            <span class="tag">HPC experiments</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>String attractors of Rote sequences</h3>
+          <div class="collaborator">with <a href="https://kmlinux.fjfi.cvut.cz/~balkolub/" target="_blank">Ľubomíra Dvořáková</a></div>
+          <ul class="project-links">
+            <li><i class="fa-solid fa-file-lines"></i><a href="https://dmtcs.episciences.org/paper/view/id/14268" target="_blank">Paper in DMTCS: String attractors of Rote sequences</a></li>
+            <li><i class="fa-solid fa-graduation-cap"></i><a href="bachelor-thesis.pdf" target="_blank">Bachelor thesis</a></li>
           </ul>
-        <li>Other projects published at <a href="https://github.com/vercah/" target="_blank">GitHub</a></li>
-      </ul>
+          <div class="tags">
+            <span class="tag">string attractors</span>
+            <span class="tag">combinatorics on words</span>
+            <span class="tag">Sturmian words</span>
+            <span class="tag">Rote infinite words</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
 
-  <div class="w3-row light w3-padding-16">
+  <div class="w3-row light w3-padding-16" id="experience">
+    <div class="w3-third w3-container">
+      <h1 class="w3-text-green">Experience</h1>
+    </div>
+    <div class="w3-twothird w3-container w3-padding-16">
+      <div class="experience-list">
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Operations at <a href="https://humanaligned.ai/" target="_blank">Human-aligned AI Summer School</a></h3>
+            <span class="exp-meta">2026 (current)</span>
+          </div>
+          <p>Four-day summer school under the <a href="https://acsresearch.org/" target="_blank">ACS</a> group on current questions in AI alignment research and the broader framings that shape them. I run the application and evaluation process, build and maintain automations, set up secure and accessible ways for the rest of the team to incorporate AI into their work, and handle participant communication and event operations.</p>
+          <div class="tags">
+            <span class="tag">AI integration</span>
+            <span class="tag">GSuite tooling</span>
+            <span class="tag">operations</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>IT developer & support at <a href="https://fykos.cz/" target="_blank">FYKOS</a></h3>
+            <span class="exp-meta">2020 — 2026</span>
+          </div>
+          <p>Developed, deployed and administered a mid-sized web application with a participant and event database, competition IT systems, and several static websites supporting the group's events (see below).</p>
+          <div class="tags">
+            <span class="tag">Nette</span>
+            <span class="tag">PHP</span>
+            <span class="tag">SQL</span>
+            <span class="tag">DokuWiki</span>
+            <span class="tag">bash</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Core leadership member at <a href="https://fykos.cz/" target="_blank">FYKOS</a></h3>
+            <span class="exp-meta">2020 — 2025</span>
+          </div>
+          <p>Students' group at Charles University organizing several major annual events and international competitions in physics for high-school students. My main involvement:</p>
+
+          <div class="sub-projects">
+            <div class="sub-project">
+              <h4><a href="https://fykos.cz/akce/soustredeni" target="_blank">Experience camps</a></h4>
+              <p>Week-long camp for 40 selected participants combining physics lectures with team-building games and experiences. I owned the end-to-end organization of the <a href="https://fykos.cz/akce/soustredeni/2022-podzim" target="_blank">camp of autumn 2022</a>, doing project management and leading 20 other organizers.</p>
+            </div>
+            <div class="sub-project">
+              <h4><a href="https://fyziklani.cz/" target="_blank">Fyziklani</a></h4>
+              <p>International in-person physics competition in Prague, surrounded by several days of accompanying program with lectures, excursions and community-building activities. Participation grew from ~700 to ~1400 students in recent years, with 15–25 nationalities represented annually. I was one of the core project and operations managers in 2022–2025: contributing to scaling the event, developing and operating the underlying IT infrastructure, and managing communications and team support. I was the Head of Team Arrival in 2023, 2024 and 2025.</p>
+            </div>
+            <div class="sub-project">
+              <h4><a href="https://online.fyziklani.cz/" target="_blank">Physics Brawl Online</a></h4>
+              <p>Online version of Fyziklani, with up to ~6,000 participants from ~70 countries. I took on communications and team support, and helped develop and operate the underlying IT infrastructure.</p>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag">leadership</span>
+            <span class="tag">project management</span>
+            <span class="tag">operations</span>
+            <span class="tag">internal communications</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Teaching Assistant in Linear Algebra at <a href="https://fjfi.cvut.cz/" target="_blank">FNSPE CTU</a></h3>
+            <span class="exp-meta">2024 — 2025 (3 semesters)</span>
+          </div>
+          <p>Led exercise sessions of the linear algebra course for classes of ~30 students.</p>
+          <div class="tags">
+            <span class="tag">teaching</span>
+            <span class="tag">linear algebra</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Database administrator & operations at <a href="https://fjfi.cvut.cz/cz/tyden-vedy-na-jaderce" target="_blank">Science Week</a></h3>
+            <span class="exp-meta">2022</span>
+          </div>
+          <p>One-week event for 150 high-school students aimed at popularizing physics through small-group projects, team-building games and lectures. I maintained the XML database and application process, handled communication with participants and tutors, and administered the event website on the server.</p>
+          <div class="tags">
+            <span class="tag">XML</span>
+            <span class="tag">communication</span>
+            <span class="tag">remote server administration</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="w3-row dark w3-padding-16" id="other">
+    <div class="w3-third w3-container">
+      <h1 class="w3-text-green">Other engagements</h1>
+    </div>
+    <div class="w3-twothird w3-container w3-padding-16">
+      <div class="project-grid">
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Lecturer & organizer at Science summer camps for children</h3>
+            <span class="exp-meta">2018 — 2023</span>
+          </div>
+          <p>Annual two-week summer camp of Charles University for 90 elementary-school children focused on science education. I designed and led physics programs and scientific mini-projects for the participants.</p>
+          <div class="tags">
+            <span class="tag">teaching</span>
+            <span class="tag">physics outreach</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Project supervisor at <a href="https://fjfi.cvut.cz/cz/tyden-vedy-na-jaderce" target="_blank">Science Week</a></h3>
+            <span class="exp-meta">2023 (2 days)</span>
+          </div>
+          <p>Supervised a group of 3 high-school students on a project on the Calkin–Wilf tree.</p>
+          <div class="tags">
+            <span class="tag">supervision</span>
+            <span class="tag">math research</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Operations staff at <a href="https://pair.camp/" target="_blank">PAIR Camp</a></h3>
+            <span class="exp-meta">2024, 2025</span>
+          </div>
+          <p>Two-week UK-based international camp for ~25 selected students focused on AI and applied rationality.</p>
+          <div class="tags">
+            <span class="tag">operations</span>
+            <span class="tag">AI &amp; rationality</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Building the <a href="https://github.com/vercah/acquainted" target="_blank">Acquainted app</a></h3>
+            <span class="exp-meta">2026</span>
+          </div>
+          <p>Tiny local app I built for myself with Claude and made it public. I am a good listener but not such a good rememberer.</p>
+          <div class="tags">
+            <span class="tag">personal project</span>
+          </div>
+        </div>
+
+      </div>
+      <p class="other-projects"><i class="fa-brands fa-github"></i> Other projects published at <a href="https://github.com/vercah/" target="_blank">GitHub</a>.</p>
+    </div>
+  </div>
+
+
+  <div class="w3-row light w3-padding-16" id="contact">
     <div class="w3-third w3-container">
       <h1 class="w3-text-green">Contact</h1>
     </div>
