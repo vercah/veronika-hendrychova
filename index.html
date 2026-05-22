@@ -157,10 +157,10 @@
    white-space: nowrap;
  }
 
- .avatar-column {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+ .avatar-container {
+   padding-bottom: 0;
+   margin-left: auto;
+   margin-right: auto;
  }
 
  .cv-pill {
@@ -319,11 +319,13 @@
 <div class="w3-main">
 
   <div class="w3-row w3-padding-64 light" id="about">
-    <div class="w3-third w3-container avatar-column">
+    <div class="w3-third w3-container">
       <div class="avatar-container">
         <img class="w3-center avatar" src="profile-photo.jpg" alt="Veronika Hendrychová">
       </div>
-      <a href="cv.pdf" class="cv-pill"><i class="fa-solid fa-download"></i> My CV</a>
+      <div class="w3-center">
+        <a href="cv.pdf" class="cv-pill"><i class="fa-solid fa-download"></i> My CV</a>
+      </div>
       <!-- <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
     </div>
     <div class="w3-twothird w3-container">
