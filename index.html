@@ -157,6 +157,12 @@
    white-space: nowrap;
  }
 
+ .avatar-column {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
  .cv-pill {
    display: inline-flex;
    align-items: center;
@@ -168,8 +174,7 @@
    padding: 6px 14px;
    font-size: 0.9em;
    text-decoration: none;
-   margin-top: auto;
-   align-self: flex-start;
+   margin-top: 16px;
    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
  }
 
@@ -314,10 +319,11 @@
 <div class="w3-main">
 
   <div class="w3-row w3-padding-64 light" id="about">
-    <div class="w3-third w3-container">
+    <div class="w3-third w3-container avatar-column">
       <div class="avatar-container">
         <img class="w3-center avatar" src="profile-photo.jpg" alt="Veronika Hendrychová">
       </div>
+      <a href="cv.pdf" class="cv-pill"><i class="fa-solid fa-download"></i> My CV</a>
       <!-- <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
     </div>
     <div class="w3-twothird w3-container">
@@ -333,7 +339,6 @@
         <span class="tag">sporty adrenaline activities</span>
         <span class="tag">vibecoding</span>
       </div>
-      <a href="cv.pdf" class="cv-pill"><i class="fa-solid fa-download"></i> My CV</a>
     </div>
   </div>
 
