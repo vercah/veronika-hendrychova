@@ -22,6 +22,16 @@
    margin-bottom: 16px;
  }
 
+ #other .project-grid {
+   grid-template-columns: repeat(2, 1fr);
+ }
+
+ @media (max-width: 700px) {
+   #other .project-grid {
+     grid-template-columns: 1fr;
+   }
+ }
+
  .project-card {
    background-color: #fff;
    border: 1px solid #dbefdc;
@@ -473,6 +483,29 @@
 
         <div class="exp-card">
           <div class="exp-header">
+            <h3>Operations staff at <a href="https://pair.camp/" target="_blank">PAIR Camp</a></h3>
+            <span class="exp-meta">2024, 2025</span>
+          </div>
+          <p>Two-week UK-based international camp for ~25 selected students focused on AI and applied rationality.</p>
+          <div class="tags">
+            <span class="tag">operations</span>
+            <span class="tag">AI &amp; rationality</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>Building the <a href="https://github.com/vercah/acquainted" target="_blank">Acquainted app</a></h3>
+            <span class="exp-meta">2026</span>
+          </div>
+          <p>Tiny local app I built for myself with Claude and made it public. I am a good listener but not such a good rememberer.</p>
+          <div class="tags">
+            <span class="tag">personal project</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
             <h3>Lecturer & organizer at Science summer camps for children</h3>
             <span class="exp-meta">2018 — 2023</span>
           </div>
@@ -492,29 +525,6 @@
           <div class="tags">
             <span class="tag">supervision</span>
             <span class="tag">math research</span>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <div class="exp-header">
-            <h3>Operations staff at <a href="https://pair.camp/" target="_blank">PAIR Camp</a></h3>
-            <span class="exp-meta">2024, 2025</span>
-          </div>
-          <p>Two-week UK-based international camp for ~25 selected students focused on AI and applied rationality.</p>
-          <div class="tags">
-            <span class="tag">operations</span>
-            <span class="tag">AI &amp; rationality</span>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <div class="exp-header">
-            <h3>Building the <a href="https://github.com/vercah/acquainted" target="_blank">Acquainted app</a></h3>
-            <span class="exp-meta">2026</span>
-          </div>
-          <p>Tiny local app I built for myself with Claude and made it public. I am a good listener but not such a good rememberer.</p>
-          <div class="tags">
-            <span class="tag">personal project</span>
           </div>
         </div>
 
